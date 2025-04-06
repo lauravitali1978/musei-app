@@ -1,7 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Museo;
 
 Route::get('/', function () {
-    return view('welcome');
+    $musei = Museo::all();
+    return view('welcome', compact('musei'));
+});
+
+Route::get('/', function () {
+    return view('home');
 });
